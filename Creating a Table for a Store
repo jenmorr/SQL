@@ -1,0 +1,54 @@
+/*In the below example, I designed a table for a store, including 15 products, prices, and inventory counts.*/
+
+
+CREATE TABLE inventory
+(product_id NUMERIC, 
+product TEXT, 
+quantity NUMERIC, 
+price NUMERIC);
+
+INSERT INTO inventory (product_id, product, quantity, price)
+VALUES
+(93479, "dog treats", 114, 5.99), 
+(93472, "cat treats", 110, 4.99), 
+(92475, "fish food", 78, 3.26), 
+(54983, "small dog collars", 16, 8.99), 
+(53435, "medium dog collars", 13, 8.99), 
+(54346, "large dog collars", 8, 10.99), 
+(93734, "dog harness", 4, 24.99), 
+(764357, "small food bowl", 6, 4.99), 
+(93673, "large food bowl", 3, 9.99), 
+(39563, "dog food", 89, 16.79), 
+(76347, "hard cat food", 72, 14.67), 
+(46454, "soft cat food", 36, 16.49), 
+(75767, "litter box", 7, 13.89), 
+(94673, "litter scooper", 6, 4.99), 
+(39673, "cat litter", 18, 18.99);
+
+SELECT *
+FROM inventory
+ORDER BY price;
+
+/*Find the product with the highest quantity in stock and how many of that product there are*/
+SELECT product, quantity
+FROM inventory
+ORDER BY quantity DESC
+LIMIT 1;
+
+/*Find the lowest priced product in stock and include the price*/
+SELECT product, price
+FROM inventory
+ORDER BY price ASC
+LIMIT 1; 
+
+/*Find how many products have 20 or greater units in stock*/
+SELECT COUNT(product)
+FROM inventory
+WHERE quantity >= 20;
+
+
+
+
+
+
+
